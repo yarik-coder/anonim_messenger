@@ -1,0 +1,13 @@
+QLineEdit = текстовое поле
+QPushButton = кнопка
+QLabel = label
+
+layout = QVBoxLayout() типо pack
+layout.addWidget = добавить на экран
+
+button.clicked.connect(self.greetings) = действие кнопки
+
+app = QApplication(sys.argv)
+form = Form()
+form.show()
+sys.exit(app.exec()) = чтобы запустилось
