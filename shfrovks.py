@@ -1,20 +1,25 @@
 import random
 
-aphavit = "abcdefghijklmnopqrstuvwxyzабвгдеёжзийклмнопрстуфхцчшщъыьэюяa"
+aphavit = "abcdefghijklmnopqrstuvwxyzабвгдеёжзийклмнопрстуфхцчшщъыьэюя"
 message = input()
 
 shifr = []
 shifr_chisel = []
-for i in range(len(aphavit)):
-    #print(i)
-    for a in message:
+for a in message:
+    for i in range(len(aphavit)):
         if aphavit[i] == a:
-            #for_append = i + 1
-            shifr.append(aphavit[i])
+            for_append = i + 1
+            if for_append == 59:
+                for_append = for_append - 59
+            shifr.append(aphavit[for_append])
             shifr_chisel.append(i)
-
-print(shifr[::-1])
-
+message = shifr
+#print(shifr)
+n = ""
+for i in shifr:
+    n = n + i
+print(n)
+message = n
 
 a = 2
 poln_scet = 0
@@ -33,7 +38,24 @@ while i < len(message):
         #print(message[poln_scet])
         message = message[0: poln_scet] + dop_bukva + dopp_bukva + message[poln_scet:]
         a = 0
-        #print(message)
+print(message)
 
+#дешифровка↓
+message = message[::3]
+print(message)
+shifr1 = []
+shifr_chisel1 = []
+for a in message:
+    for i in range(len(aphavit)):
+        if aphavit[i] == a:
+            for_append = i - 1
+            shifr1.append(aphavit[for_append])
+            shifr_chisel1.append(i)
 
-#print(message[::3])
+#print(shifr1)
+
+n1 = ""
+for i in shifr1:
+    n1 = n1 + i
+print(n1)
+message = n1
